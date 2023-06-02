@@ -1,0 +1,334 @@
+/* <!-- ============= google fonts ============ --> */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* <!-- ============= variables css ============ --> */
+:root {
+    /* ====== colors ====== */
+    --hue-color: 242;
+
+    /* ====== hsl color mode ====== */
+    --skin-color: hsl(342, 92%, 46%);
+    --title-color: hsl(var(--hue-color), 8%, 95%);
+    --text-color: hsl(var(--hue-color), 8%, 85%);
+    --body-color: hsl(var(--hue-color), 19%, 5%);
+    --box-color: hsl(var(--hue-color), 14%, 10%);
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 38%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
+
+    /* ====== fonts and typography ====== */
+    --body-font: 'Poppins', sans-serif;
+
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+
+    /* ====== font weight ====== */
+    --font-medium: 500;
+    --font-bold: 600;
+
+    /* ====== margenes bottom ====== */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /* ====== z index ====== */
+    --z-fixed: 10;
+    --z-modal: 100;
+}
+
+/* <!-- ============= base ============ --> */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+textarea,
+button,
+input {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    cursor: pointer;
+}
+
+button,
+textarea,
+input {
+    border: none;
+    outline: none;
+}
+
+/* <!-- ============= layout ============ --> */
+.container {
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid {
+    display: grid;
+}
+
+/* <!-- ============= reusable css classes ============ --> */
+.section {
+    padding: 6.5rem 0 2rem;
+}
+
+/* <!-- ============= Home section ============ --> */
+.home {
+    /* background: url(../assets/img/hero.png); */
+    /* background-color: hsl(240, 14.3%, 6.9%);
+    background-size: cover;
+    background-position: center center; */
+    height: 100vh;
+    padding-left: 2rem;
+}
+
+.home_container {
+    position: relative;
+    height: 100%;
+    align-items: center;
+}
+
+.home_social {
+    position: absolute;
+    top: 1.8rem;
+    left: 0;
+    display: flex;
+    align-items: center;
+    column-gap: 3.5rem;
+}
+
+.home_social-follow {
+    font-weight: var(--font-medium);
+    position: relative;
+}
+
+.home_social-follow::after {
+    position: absolute;
+    content: '';
+    width: 1rem;
+    height: 2px;
+    background-color: var(--text-color);
+    right: -45%;
+    top: 50%;
+}
+
+.home_social-links {
+    display: inline-flex;
+    column-gap: 1rem;
+}
+
+.home_social-link {
+    font-size: 1.08rem;
+    color: var(--text-color);
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+}
+
+.home_social-link:hover {
+    transform: translateY(.25rem);
+    -webkit-transform: translateY(.25rem);
+    -moz-transform: translateY(.25rem);
+    -ms-transform: translateY(.25rem);
+    -o-transform: translateY(.25rem);
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home_img {
+    height: 100%;
+}
+
+.about-img {
+    box-shadow: 0 .2rem 5rem var(--skin-color);
+    border-top-left-radius: 100%;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background: var(--skin-color);
+    width: 30rem;
+    position: absolute;
+    height: 28rem;
+    right: 10%;
+}
+
+.home_title {
+    font-size: var(--biggest-font-size);
+}
+
+.home_subtitle {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-0-75);
+}
+
+.home_description {
+    max-width: 450px;
+    margin-bottom: var(--mb-2);
+}
+
+.my_info {
+    display: flex;
+    column-gap: 1.8rem;
+    position: absolute;
+    left: 0;
+    bottom: 1.8rem;
+}
+
+.info_item {
+    display: flex;
+    align-items: center;
+}
+
+.info_title,
+.info_subtitle {
+    font-size: var(--small-font-size);
+}
+
+.info_title {
+    font-weight: var(--font-medium);
+}
+
+.info_icon {
+    font-size: 1.8rem;
+    color: var(--skin-color);
+    margin-right: var(--mb-0-75);
+}
+
+
+@media screen and (max-width: 1075px) {
+    .home {
+        position: relative;
+    }
+
+    .home_container {
+        position: absolute;
+        gap: 25px;
+    }
+
+    .home_social {
+        position: relative;
+    }
+
+    .center {
+        flex-direction: column-reverse;
+        padding: 20px 0;
+    }
+
+    .about-img {
+        position: relative;
+        width: 17rem;
+        height: 47%;
+    }
+
+    .home_data {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .home_data h1 {
+        font-size: var(--h2-font-size);
+    }
+
+    .home_data h3 {
+        font-size: var(--h3-font-size);
+    }
+
+    .home_data p {
+        font-size: var(--smaller-font-size);
+    }
+
+    .home_description {
+        max-width: 70%;
+    }
+
+    .my_info {
+        position: relative;
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: stretch;
+        justify-content: center;
+        width: fit-content;
+    }
+
+    .info_title,
+    .info_subtitle {
+        font-size: var(--smaller-font-size);
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .home {
+        padding: 0;
+    }
+
+    .home_description {
+        max-width: 90%;
+    }
+
+    .my_info,
+    .home_social {
+        padding: 0 25px;
+    }
+
+    .center {
+        flex-direction: column-reverse;
+        padding: 30px 0;
+    }
+}
